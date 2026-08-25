@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#711f2d">
+<meta name="color-scheme" content="light only">
+<title>Cusco Decide | Provincia de Calca 2026</title>
+<meta name="description" content="Sondeo ciudadano referencial para la alcaldía provincial de Calca 2026.">
+<meta property="og:title" content="Cusco Decide | Provincia de Calca 2026">
+<meta property="og:description" content="Sondeo ciudadano referencial de la provincia de Calca. Candidaturas en verificación con fuentes electorales.">
+<style>
+:root{--vino:#711f2d;--vino2:#51151f;--oro:#c89d46;--ink:#1d1b19;--muted:#716a64;--bg:#f5f2ed;--line:#e7ded5;--green:#1b7652}
+*{box-sizing:border-box}html{background:var(--bg);color-scheme:light}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}.app{max-width:720px;margin:auto;min-height:100vh;background:#faf8f5}.top{height:62px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;padding:0 13px}.logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(145deg,var(--vino),var(--vino2));color:#fff;display:grid;place-items:center;font-weight:950}.brand{flex:1}.brand strong{display:block;font-size:17px}.brand small{display:block;color:var(--muted);font-size:10px;margin-top:2px}.main{padding:12px}.hero{background:linear-gradient(135deg,#261a1c,#6b1c2a);color:#fff;border-radius:18px;padding:18px}.kicker{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#e7c88c;font-weight:900}.hero h1{font-size:30px;line-height:1.02;margin:6px 0 8px}.hero p{margin:0;color:#eee3df;font-size:13px;line-height:1.5}.pill{display:inline-flex;margin-top:12px;align-items:center;gap:7px;background:#fff2d7;color:#6a4c0a;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:900}.card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:15px;margin-top:11px}.card h2{font-size:20px;margin:0 0 8px}.card p{font-size:13px;color:var(--muted);line-height:1.55;margin:0}.status{display:grid;gap:9px;margin-top:13px}.row{display:flex;gap:10px;align-items:flex-start;padding:11px;border:1px solid var(--line);border-radius:13px;background:#fbfaf8}.ico{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:#f1ece6;flex:0 0 auto}.row strong{display:block;font-size:13px}.row span{display:block;color:var(--muted);font-size:11px;margin-top:2px;line-height:1.4}.notice{margin-top:11px;background:#fff7df;border:1px solid #ead89d;border-left:4px solid var(--oro);border-radius:12px;padding:11px;color:#5b4819;font-size:11px;font-weight:800;line-height:1.45}.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.btn{min-height:48px;border:0;border-radius:13px;font-weight:900;text-decoration:none;display:flex;align-items:center;justify-content:center;cursor:pointer}.primary{background:var(--vino);color:#fff}.secondary{background:#f1ece6;color:#3e3936}.small{font-size:10px;color:var(--muted);line-height:1.5;margin-top:11px}.toast{display:none;margin-top:10px;background:#211a1a;color:#fff;border-radius:11px;padding:10px;font-size:11px}.toast.show{display:block}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top"><div class="logo">CD</div><div class="brand"><strong>Cusco Decide</strong><small>Tu opinión, nuestra región</small></div></header>
+<main class="main">
+<section class="hero"><div class="kicker">Sondeo provincial 2026</div><h1>Provincia de Calca</h1><p>Preparando el sondeo ciudadano para la alcaldía provincial de Calca.</p><div class="pill">⏳ Candidaturas en verificación</div></section>
+<div class="notice">Los resultados de este sondeo serán referenciales y no tendrán sustento científico.</div>
+<section class="card"><h2>Estamos verificando la lista oficial</h2><p>Antes de habilitar la votación, Cusco Decide contrastará nombres, organización política, fotografía, símbolo y estado de candidatura con fuentes electorales oficiales.</p><div class="status"><div class="row"><div class="ico">✓</div><div><strong>Provincia configurada</strong><span>Calca ya está creada en la plataforma.</span></div></div><div class="row"><div class="ico">⌕</div><div><strong>Revisión electoral en curso</strong><span>La lista puede cambiar mientras el JNE resuelve inscripciones, sustituciones o actualizaciones.</span></div></div><div class="row"><div class="ico">🔒</div><div><strong>Votación todavía cerrada</strong><span>Se habilitará cuando la lista provincial quede verificada.</span></div></div></div><div class="actions"><a class="btn secondary" href="index.html">Ver Lares</a><button class="btn primary" id="share">Compartir Calca</button></div><div id="toast" class="toast"></div></section>
+<p class="small">Cusco Decide no representa al JNE, ONPE, RENIEC, municipalidades ni organizaciones políticas. Este es un proyecto ciudadano independiente.</p>
+</main>
+</div>
+<script>
+const URL='https://lukasandgeorgeth87.github.io/CUSCO-DECIDE-ELECCIONES-2026/calca.html';
+const TEXT='📊 CALCA OPINA · Próximamente: sondeo ciudadano provincial 2026 en Cusco Decide.';
+const share=document.getElementById('share');const toast=document.getElementById('toast');
+share.addEventListener('click',async()=>{try{if(navigator.share){await navigator.share({title:'Cusco Decide | Calca 2026',text:TEXT,url:URL})}else{await navigator.clipboard.writeText(TEXT+'\n'+URL);toast.textContent='Enlace de Calca copiado.';toast.classList.add('show')}}catch(e){}});
+</script>
+</body>
+</html>
