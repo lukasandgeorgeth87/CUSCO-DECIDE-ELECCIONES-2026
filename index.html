@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <meta name="theme-color" content="#6f1f2b" />
 <meta name="description" content="Cusco Decide: sondeos ciudadanos referenciales de la región Cusco." />
 <meta property="og:title" content="Cusco Decide | Sondeo Lares 2026" />
@@ -12,22 +12,46 @@
 </head>
 <body>
 <div class="top"><div class="wrap"><span>Plataforma ciudadana independiente · Cusco, Perú</span><span>Sondeos abiertos y referenciales</span></div></div>
-<header class="nav"><div class="wrap navin"><a href="#inicio" class="brand"><div class="logo">CD</div><div><strong>Cusco Decide</strong><small>Tu opinión, nuestra región</small></div></a><nav class="navlinks"><a href="#sondeos">Sondeos</a><a href="#resultados">Resultados</a><a href="#acerca">Acerca</a></nav></div></header>
+<header class="nav"><div class="wrap navin"><a href="#inicio" class="brand"><div class="logo">CD</div><div><strong>Cusco Decide</strong><small>Tu opinión, nuestra región</small></div></a><nav class="navlinks"><a href="#poll">Votar</a><a href="#resultados">Resultados</a><a href="#acerca">Acerca</a></nav><a class="navVote btn primary" href="#poll">Votar ahora</a></div></header>
+
 <main id="inicio">
-<section class="hero"><div class="wrap heroGrid"><div><div class="eyebrow">Región Cusco · Participación ciudadana</div><h1>¿Qué piensa<br>Cusco?</h1><p>Participa en sondeos ciudadanos por provincia y distrito. Lares es el primer sondeo activo de Cusco Decide; la plataforma está preparada para incorporar más jurisdicciones del Cusco.</p><div class="cta"><a href="#sondeos" class="btn primary" style="text-decoration:none">Participar ahora</a><button id="share" class="btn secondary" type="button">Compartir</button></div></div><aside class="heroCard"><div class="eyebrow" style="color:#e5c98f">Primer sondeo</div><div class="big">Lares 2026</div><p>Provincia de Calca · Preferencia para alcaldía distrital</p><span class="status"><span class="dot"></span> Votación conectada</span></aside></div></section>
+<section class="hero"><div class="wrap heroGrid"><div><div class="eyebrow">Región Cusco · Participación ciudadana</div><h1>¿Qué piensa<br>Cusco?</h1><p>Participa en el sondeo ciudadano de Lares. Elige una opción y revisa los resultados referenciales en tiempo real.</p><div class="cta"><a href="#poll" class="btn primary">Participar ahora</a><button id="share" class="btn secondary" type="button">Compartir</button></div></div><aside class="heroCard"><div class="eyebrow">Sondeo activo</div><div class="big">Lares 2026</div><p>Provincia de Calca · Preferencia para alcaldía distrital</p><span class="status"><span class="dot"></span> Votación conectada</span></aside></div></section>
+
 <div class="wrap"><div class="notice">Los resultados de este sondeo son referenciales y no tienen sustento científico.</div></div>
-<section class="section" id="sondeos"><div class="wrap"><div class="sectionTitle"><div><div class="eyebrow">Jurisdicción</div><h2>Sondeos activos</h2></div><p>La plataforma admite nuevas provincias y distritos.</p></div><div class="filters"><div class="field"><label>Provincia</label><select><option>Calca</option></select></div><div class="field"><label>Distrito</label><select><option>Lares</option></select></div><button class="btn primary" id="openPoll" type="button">Abrir sondeo</button></div></div></section>
-<section class="section" id="poll"><div class="wrap"><article class="poll"><div class="pollHead"><div class="crumb">Calca › Lares › Elecciones municipales 2026</div><h2>Sondeo Electoral – Distrito de Lares 2026</h2><p>Si las elecciones para la alcaldía distrital de Lares fueran hoy, ¿por quién votaría usted?</p></div><div class="pollBody">
-<div class="elig"><label class="check"><input id="adult" type="checkbox"><span><strong>Tengo 18 años o más</strong><br><small>Confirmo que cumplo la edad electoral.</small></span></label><label class="check"><input id="elector" type="checkbox"><span><strong>Soy elector/a de Lares</strong><br><small>Confirmo que voto en esta jurisdicción.</small></span></label></div>
-<div class="meta"><div class="field"><label for="age">Grupo de edad (opcional)</label><select id="age"><option value="">Prefiero no indicar</option><option value="18-29">18–29</option><option value="30-44">30–44</option><option value="45-59">45–59</option><option value="60+">60+</option></select></div><div class="field"><label for="community">Comunidad o sector (opcional)</label><input id="community" maxlength="60" placeholder="Ej.: Lares, Choquecancha…"></div></div>
+
+<section class="section jurisdictionSection" id="sondeos"><div class="wrap"><div class="sectionTitle"><div><div class="eyebrow">Jurisdicción</div><h2>Sondeo activo</h2></div><p>La plataforma puede incorporar nuevas provincias y distritos.</p></div><div class="filters"><div class="field"><label>Provincia</label><select aria-label="Provincia"><option>Calca</option></select></div><div class="field"><label>Distrito</label><select aria-label="Distrito"><option>Lares</option></select></div><button class="btn primary" id="openPoll" type="button">Ir a votar</button></div></div></section>
+
+<section class="section pollSection" id="poll"><div class="wrap"><article class="poll">
+<div class="pollHead"><div class="crumb">Calca › Lares › Elecciones municipales 2026</div><h2>¿Por quién votaría usted?</h2><p>Alcaldía Distrital de Lares · Sondeo ciudadano referencial</p></div>
+<div class="pollBody">
+<div class="pollSteps" aria-hidden="true"><span><b>1</b> Confirma</span><span><b>2</b> Elige</span><span><b>3</b> Revisa</span></div>
+
+<div class="eligTitle"><strong>Antes de votar</strong><span>Marca las dos casillas</span></div>
+<div class="elig"><label class="check" id="adultCheck"><input id="adult" type="checkbox"><span><strong>Tengo 18 años o más</strong><small>Cumplo la edad electoral.</small></span></label><label class="check" id="electorCheck"><input id="elector" type="checkbox"><span><strong>Soy elector/a de Lares</strong><small>Voto en esta jurisdicción.</small></span></label></div>
+<div id="voteLock" class="voteLock">🔒 Marca las dos casillas para habilitar las opciones.</div>
+<div id="alreadyVoted" class="alreadyVoted" hidden>✓ Este dispositivo ya registró una participación en este sondeo.</div>
+
+<details class="optionalMeta"><summary>Datos opcionales: edad y comunidad</summary><div class="meta"><div class="field"><label for="age">Grupo de edad</label><select id="age"><option value="">Prefiero no indicar</option><option value="18-29">18–29</option><option value="30-44">30–44</option><option value="45-59">45–59</option><option value="60+">60+</option></select></div><div class="field"><label for="community">Comunidad o sector</label><input id="community" maxlength="60" placeholder="Ej.: Lares, Choquecancha…"></div></div></details>
+
+<div class="chooseTitle"><div><div class="eyebrow">Elige una opción</div><h3>Candidatos</h3></div><span>Orden aleatorio y neutral</span></div>
 <div id="candidateGrid" class="candidates disabled"><div class="loading">Cargando candidatos…</div></div>
 <div id="sourceNote" class="sourceNote">Cargando fuente de candidaturas…</div>
+<div class="specialTitle">También puedes elegir:</div>
 <div id="specials" class="specials disabled"></div>
-<section class="results" id="resultados"><div class="resultsHead"><div><div class="eyebrow">Ranking referencial</div><h3 style="margin:4px 0">Resultados en tiempo real</h3></div><div id="totalVotes" class="counter">Actualizando…</div></div><div id="ranking" class="rankList"></div><div id="specialResults" class="specialResults">Cargando resultados…</div></section>
+
+<section class="results" id="resultados"><div class="resultsHead"><div><div class="eyebrow">Ranking referencial</div><h3>Resultados en tiempo real</h3></div><div id="totalVotes" class="counter">Actualizando…</div></div><div id="ranking" class="rankList"></div><div id="specialResults" class="specialResults">Cargando resultados…</div></section>
 </div></article></div></section>
-<section class="section" id="acerca"><div class="wrap"><div class="sectionTitle"><div><div class="eyebrow">Transparencia</div><h2>Acerca del sondeo</h2></div></div><div class="about"><div class="info"><h3>Participación voluntaria</h3><p>No se solicita nombre, DNI, teléfono ni correo. Los campos de edad y comunidad son opcionales.</p></div><div class="info"><h3>No es una encuesta científica</h3><p>Un sondeo abierto en internet puede tener sesgo de autoselección y no representa necesariamente a todos los electores.</p></div><div class="info"><h3>Fuente electoral</h3><p>Nombres, fotografías, símbolos y estado de candidatura se contrastan con JNE Voto Informado ERM 2026.</p></div></div><div class="notice" style="margin-top:16px">Cusco Decide no representa al JNE, ONPE, RENIEC, municipalidades ni organizaciones políticas. Este sondeo abierto en internet no constituye una encuesta electoral científica ni un resultado oficial.</div></div></section>
+
+<section class="section" id="acerca"><div class="wrap"><div class="sectionTitle"><div><div class="eyebrow">Transparencia</div><h2>Acerca del sondeo</h2></div></div><div class="about"><div class="info"><h3>Participación voluntaria</h3><p>No se solicita nombre, DNI, teléfono ni correo. Edad y comunidad son opcionales.</p></div><div class="info"><h3>No es una encuesta científica</h3><p>Un sondeo abierto en internet puede tener sesgo de autoselección y no representa necesariamente a todos los electores.</p></div><div class="info"><h3>Fuente electoral</h3><p>Nombres, fotografías, símbolos y estado de candidatura se contrastan con JNE Voto Informado ERM 2026.</p></div></div><div class="notice">Cusco Decide no representa al JNE, ONPE, RENIEC, municipalidades ni organizaciones políticas. Este sondeo abierto en internet no constituye una encuesta electoral científica ni un resultado oficial.</div></div></section>
 </main>
-<footer class="footer"><div class="wrap"><strong>Cusco Decide</strong><p>Plataforma ciudadana de sondeos referenciales para provincias y distritos del Cusco.</p></div></footer><div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<footer class="footer"><div class="wrap"><strong>Cusco Decide</strong><p>Plataforma ciudadana de sondeos referenciales para provincias y distritos del Cusco.</p></div></footer>
+
+<div class="mobileDock" aria-label="Acciones rápidas"><a href="#poll"><span>✓</span>Votar</a><a href="#resultados"><span>▥</span>Resultados</a><button id="shareMobile" type="button"><span>↗</span>Compartir</button></div>
+
+<dialog id="voteDialog" class="voteDialog"><form method="dialog" class="voteDialogCard"><button class="dialogClose" value="cancel" aria-label="Cerrar">×</button><div class="dialogIcon">✓</div><div class="eyebrow">Confirmar elección</div><h3 id="dialogChoice">Opción seleccionada</h3><p id="dialogParty"></p><p class="dialogHint">Tu participación no podrá modificarse desde este dispositivo una vez registrada.</p><div class="dialogActions"><button class="btn secondary" value="cancel" type="submit">Cancelar</button><button class="btn primary" id="confirmVote" value="default" type="button">Confirmar voto</button></div></form></dialog>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
 <script src="app.js" defer></script>
 </body>
 </html>
