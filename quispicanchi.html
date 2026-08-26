@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#711f2d">
+<title>Cusco Decide | Quispicanchi 2026</title>
+<style>
+html,body{margin:0;background:#f5f2ed;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#1d1b19}body{min-height:100vh}.boot{max-width:760px;margin:auto;padding:18px}.card{margin-top:18vh;background:#fff;border:1px solid #e8e0d8;border-radius:18px;padding:22px;text-align:center}.logo{width:48px;height:48px;border-radius:13px;background:#711f2d;color:#fff;display:grid;place-items:center;margin:0 auto 12px;font-weight:900}.card h1{font-size:22px;margin:0 0 7px}.card p{font-size:13px;color:#746d67;margin:0}.error{display:none;margin-top:12px;color:#8a2535;font-size:12px}
+</style>
+</head>
+<body>
+<div class="boot"><div class="card"><div class="logo">CD</div><h1>Cusco Decide · Quispicanchi 2026</h1><p>Cargando encuesta provincial…</p><div id="error" class="error">No se pudo cargar la encuesta. Actualiza la página.</div></div></div>
+<script>
+(async()=>{
+  try{
+    const response=await fetch('./index.html?template=quispicanchi-v1',{cache:'no-store'});
+    if(!response.ok) throw new Error('template');
+    let html=await response.text();
+    html=html
+      .replaceAll('lares-alcaldia-2026','quispicanchi-provincial-2026')
+      .replaceAll('¡Lares opina!','¡Quispicanchi opina!')
+      .replaceAll('¡LARES OPINA!','¡QUISPICANCHI OPINA!')
+      .replaceAll('Lares 2026','Quispicanchi 2026')
+      .replaceAll('de Lares','de Quispicanchi')
+      .replaceAll('en Lares','en Quispicanchi')
+      .replaceAll('Lares y','Quispicanchi y')
+      .replaceAll('Soy elector/a de Quispicanchi','Soy elector/a de la provincia de Quispicanchi')
+      .replaceAll('Voto en esta jurisdicción.','Voto en esta jurisdicción provincial.')
+      .replaceAll('alcaldía distrital de Quispicanchi','alcaldía provincial de Quispicanchi')
+      .replaceAll('Agregar edad y comunidad (opcional)','Agregar edad y distrito/comunidad (opcional)')
+      .replaceAll('Comunidad o sector','Distrito, comunidad o sector')
+      .replaceAll('Ej.: Quispicanchi, Choquecancha…','Ej.: Urcos, Ocongate, Huaro…')
+      .replaceAll("const SHARE_URL='https://lukasandgeorgeth87.github.io/CUSCO-DECIDE-ELECCIONES-2026/';","const SHARE_URL='https://lukasandgeorgeth87.github.io/CUSCO-DECIDE-ELECCIONES-2026/quispicanchi.html';")
+      .replaceAll('content="https://lukasandgeorgeth87.github.io/CUSCO-DECIDE-ELECCIONES-2026/"','content="https://lukasandgeorgeth87.github.io/CUSCO-DECIDE-ELECCIONES-2026/quispicanchi.html"')
+      .replaceAll('href="https://lukasandgeorgeth87.github.io/CUSCO-DECIDE-ELECCIONES-2026/"','href="https://lukasandgeorgeth87.github.io/CUSCO-DECIDE-ELECCIONES-2026/quispicanchi.html"')
+      .replace('.avatar{width:60px;opacity:.48}', '.avatar{width:60px;opacity:.48}.photoFallback{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:#f7f3ee;padding:10px}.photoFallback img{width:58px!important;height:58px!important;object-fit:contain!important;object-position:center!important;border-radius:10px;background:#fff;border:1px solid #ddd4cb;padding:4px}.photoFallback small{font-size:8px;line-height:1.15;text-align:center;color:#756d67;font-weight:900;text-transform:uppercase;letter-spacing:.03em}')
+      .replace("function avatar(){return '<svg class=\"avatar\" viewBox=\"0 0 120 120\" aria-hidden=\"true\"><circle cx=\"60\" cy=\"42\" r=\"25\" fill=\"#827970\"/><path d=\"M20 112c4-29 20-45 40-45s36 16 40 45\" fill=\"#827970\"/></svg>'}", "function avatar(logoUrl='',party=''){if(logoUrl)return '<div class=\"photoFallback\"><img src=\"'+logoUrl+'\" alt=\"Símbolo de '+String(party||'organización política').replace(/\"/g,'&quot;')+'\"><small>Foto pública pendiente</small></div>';return '<svg class=\"avatar\" viewBox=\"0 0 120 120\" aria-hidden=\"true\"><circle cx=\"60\" cy=\"42\" r=\"25\" fill=\"#827970\"/><path d=\"M20 112c4-29 20-45 40-45s36 16 40 45\" fill=\"#827970\"/></svg>'}")
+      .replace("(c.photo_url?'<img loading=\"lazy\" alt=\"Fotografía del candidato\">':avatar())", "(c.photo_url?'<img loading=\"lazy\" alt=\"Fotografía del candidato\">':avatar(c.logo_url,c.political_org))")
+      .replace("img.addEventListener('error',()=>{img.parentElement.innerHTML=avatar()},{once:true})", "img.addEventListener('error',()=>{img.parentElement.innerHTML=avatar(c.logo_url,c.political_org)},{once:true})")
+      .replace('Fuente de candidaturas, fotografías y símbolos: JNE – Voto Informado ERM 2026','Fuentes públicas electorales e institucionales consultadas para candidaturas, fotografías y símbolos')
+      .replace('El orden se muestra aleatoriamente para mantener neutralidad.','Los estados se mantienen en verificación hasta confirmación oficial y el orden se muestra aleatoriamente para mantener neutralidad.');
+    document.open();
+    document.write(html);
+    document.close();
+  }catch(error){
+    document.getElementById('error').style.display='block';
+  }
+})();
+</script>
+</body>
+</html>
