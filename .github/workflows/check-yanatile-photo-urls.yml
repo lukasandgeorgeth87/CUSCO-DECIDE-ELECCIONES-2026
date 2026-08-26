@@ -1,0 +1,26 @@
+name: Check Yanatile photo URLs
+on:
+  push:
+    paths:
+      - '.github/workflows/check-yanatile-photo-urls.yml'
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check candidate image URLs
+        shell: bash
+        run: |
+          set -u
+          check(){
+            name="$1"; url="$2"; out="/tmp/${name}.jpg"
+            code=$(curl -L --connect-timeout 15 --max-time 30 -sS -o "$out" -w '%{http_code}' "$url" || true)
+            size=$(wc -c < "$out" 2>/dev/null || echo 0)
+            type=$(file -b "$out" 2>/dev/null || true)
+            echo "RESULT|${name}|${code}|${size}|${type}|${url}"
+          }
+          check HUGO 'https://stovotoinformadodev.blob.core.windows.net/contenedor-1/22810859.jpg'
+          check PERCY 'https://stovotoinformadodev.blob.core.windows.net/contenedor-1/45638859.jpg'
+          check WILLY 'https://stovotoinformadodev.blob.core.windows.net/contenedor-1/47175304.jpg'
+          check NICANOR 'https://stovotoinformadodev.blob.core.windows.net/contenedor-1/24486421.jpg'
+          check NILTHONS 'https://stovotoinformadodev.blob.core.windows.net/contenedor-1/42369259.jpg'
