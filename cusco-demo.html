@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#711f2d">
+<title>Cusco Decide · Demo de intención de votos</title>
+<style>
+:root{--vino:#711f2d;--vino2:#4d131e;--oro:#c89d46;--bg:#f5f2ed;--card:#fff;--line:#e7dfd7;--ink:#1d1b19;--muted:#746d67;--ok:#18724a}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}.shell{max-width:940px;margin:auto;padding:12px}.top{display:flex;align-items:center;gap:10px;padding:5px 2px 11px}.logo{width:46px;height:46px;border-radius:13px;background:linear-gradient(145deg,var(--vino),var(--vino2));color:#fff;display:grid;place-items:center;font-weight:950}.brand strong{display:block;font-size:18px}.brand small{color:var(--muted)}.hero{background:linear-gradient(135deg,#201718,#6b1c2a);color:#fff;border-radius:20px;padding:21px}.hero h1{margin:0;font-size:31px;line-height:1.06}.hero p{margin:7px 0 0;color:#e9dcda;font-size:12px}.card{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:14px;margin-top:10px}.card h2{margin:0 0 5px;font-size:19px}.sub{font-size:10.5px;color:var(--muted);line-height:1.45}.chooser{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}.field label{display:block;font-size:10px;font-weight:900;margin:0 0 5px;color:#5c5550;text-transform:uppercase;letter-spacing:.04em}.field select{width:100%;border:1px solid var(--line);border-radius:11px;background:#fff;padding:11px 10px;font-weight:800;color:var(--ink)}.status{margin-top:10px;border-radius:12px;padding:10px 11px;background:#f7f3ee;border:1px solid var(--line);font-size:11px;line-height:1.45}.status.ready{background:#edf8f2;border-color:#bbdfcc;color:#155e3e}.status.wait{background:#fff8e5;border-color:#ead59b;color:#6d5012}.quick{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}.quick a{display:inline-flex;align-items:center;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:7px 10px;background:#fff;color:var(--vino);font-size:10px;font-weight:900}.checks{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:9px}.check{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:11px;padding:10px;font-size:11px;font-weight:750}.check input{width:19px;height:19px;accent-color:var(--vino)}.candidateList{display:grid;gap:8px;margin-top:10px}.candidate{display:grid;grid-template-columns:80px 1fr 74px;align-items:center;gap:10px;border:1px solid var(--line);border-radius:14px;overflow:hidden;min-height:98px}.symbol{height:98px;background:#faf8f5;border-right:1px solid var(--line);display:grid;place-items:center;padding:9px}.symbol img{max-width:62px;max-height:62px;object-fit:contain}.fallback{width:52px;height:52px;border-radius:12px;background:#eee8e1;display:grid;place-items:center;font-weight:950;color:#71675f}.name{font-weight:950;font-size:13px;line-height:1.18}.party{font-size:9.5px;color:var(--muted);margin-top:4px}.vote{margin-right:8px;border:0;border-radius:10px;background:var(--vino);color:#fff;padding:11px 7px;font-size:10px;font-weight:950;cursor:pointer}.vote:disabled,.special:disabled{opacity:.42;cursor:not-allowed}.specials{display:grid;gap:7px;margin-top:10px}.special{border:1px solid var(--line);background:#f7f3ee;border-radius:10px;padding:10px;font-weight:850;cursor:pointer}.results{display:grid;gap:8px;margin-top:10px}.result{border:1px solid var(--line);border-radius:12px;padding:10px}.rhead{display:flex;justify-content:space-between;gap:8px}.rname{font-size:12px;font-weight:950}.numbers{text-align:right;font-size:9px;color:var(--muted)}.numbers b{font-size:17px;color:var(--ink)}.bar{height:7px;background:#eee8e1;border-radius:999px;overflow:hidden;margin-top:7px}.bar span{display:block;height:100%;background:linear-gradient(90deg,var(--vino),var(--oro))}.specialResult{display:flex;justify-content:space-between;border-top:1px dashed var(--line);padding:8px 1px;font-size:10px}.refresh,.reset{width:100%;margin-top:10px;border:0;border-radius:10px;padding:11px;background:#2b2323;color:#fff;font-weight:900;cursor:pointer}.creator{display:none;border:2px dashed #c7b9ae;background:#fffaf6}.creator.show{display:block}.creatorBadge{display:inline-block;background:#2b2323;color:#fff;border-radius:999px;padding:5px 8px;font-size:9px;font-weight:950}.creatorGrid{display:grid;gap:8px;margin-top:10px}.creatorCandidate{border:1px solid var(--line);border-radius:12px;padding:10px}.creatorName{font-size:11px;font-weight:950}.actions{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}.actions button{border:0;border-radius:8px;padding:9px 4px;background:#f0ebe6;font-weight:950;cursor:pointer}.actions button:last-child{background:var(--vino);color:#fff}.oldLinks{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.oldLinks a{text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:12px;padding:11px;background:#faf8f5}.oldLinks strong{display:block;font-size:12px}.oldLinks span{font-size:9.5px;color:var(--muted)}.bottomChooser{border-top:3px solid var(--vino);margin-top:14px}.foot{font-size:9px;line-height:1.5;color:var(--muted);padding:12px 4px}.hidden{display:none!important}.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:17px;background:#21191a;color:#fff;padding:10px 13px;border-radius:10px;font-size:11px;display:none;z-index:40}.toast.show{display:block}@media(max-width:640px){.chooser,.checks,.oldLinks{grid-template-columns:1fr}.hero h1{font-size:26px}.candidateList{grid-template-columns:1fr}.candidate{grid-template-columns:72px 1fr 66px}.symbol{height:94px}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="top"><div class="logo">CD</div><div class="brand"><strong>Cusco Decide</strong><small>Plataforma DEMO · Cusco 2026</small></div></div>
+  <section class="hero"><h1>Demo · Intención de votos</h1><p>Elige una provincia o distrito del Cusco y visualiza su demostración.</p></section>
+
+  <section class="card">
+    <h2>Selecciona la jurisdicción</h2>
+    <div class="sub">Las jurisdicciones sin lista verificada aparecen como “En preparación”.</div>
+    <div class="chooser">
+      <div class="field"><label>Provincia</label><select id="province"></select></div>
+      <div class="field"><label>Provincia / distrito</label><select id="place"></select></div>
+    </div>
+    <div id="status" class="status">Cargando catálogo…</div>
+    <div class="quick">
+      <a href="?demo=lares-demo-manipulacion-2026">Lares</a>
+      <a href="?demo=yanatile-demo-manipulacion-2026">Yanatile</a>
+      <a href="?demo=quellouno-demo-manipulacion-2026">Quellouno</a>
+      <a href="?demo=calca-provincia-demo-manipulacion-2026">Calca provincia</a>
+      <a href="?demo=la-convencion-provincia-demo-manipulacion-2026">La Convención / Quillabamba</a>
+      <a href="?demo=quispicanchi-provincia-demo-manipulacion-2026">Quispicanchi</a>
+      <a href="?demo=urubamba-provincia-demo-manipulacion-2026">Urubamba</a>
+    </div>
+  </section>
+
+  <section id="voteCard" class="card hidden">
+    <h2 id="voteTitle">Participa en la demostración</h2>
+    <div class="sub">Una participación pública por navegador y por sondeo demo.</div>
+    <div class="checks"><label class="check"><input id="adult" type="checkbox"> Tengo 18 años o más</label><label class="check"><input id="elector" type="checkbox"> Soy elector/a de esta jurisdicción</label></div>
+    <div id="votedMsg" class="sub" style="margin-top:8px;font-weight:900"></div>
+    <div id="candidateList" class="candidateList"></div>
+    <div id="specials" class="specials"></div>
+  </section>
+
+  <section id="resultsCard" class="card hidden">
+    <h2 id="resultsTitle">Intención de voto</h2>
+    <div class="sub">Resultado visible de la demostración seleccionada.</div>
+    <div id="results" class="results"></div>
+    <div id="specialResults" style="margin-top:9px"></div>
+    <button id="refresh" class="refresh">Actualizar resultados</button>
+  </section>
+
+  <section id="creator" class="card creator">
+    <span class="creatorBadge">CONTROL LOCAL DE DEMOSTRACIÓN</span>
+    <h2 style="margin-top:8px">Sumar votos de prueba</h2>
+    <div class="sub">Solo aparece en el navegador autorizado del creador. No se muestra al público.</div>
+    <div id="creatorGrid" class="creatorGrid"></div>
+    <button id="reset" class="reset">Reiniciar votos agregados de esta demostración</button>
+  </section>
+
+  <section class="card">
+    <h2>Enlaces que ya tenías</h2>
+    <div class="sub">Se conservan; no se ha eliminado la información anterior.</div>
+    <div class="oldLinks">
+      <a href="./lares-demo.html"><strong>Lares DEMO</strong><span>Abrir enlace directo anterior</span></a>
+      <a href="./yanatile-demo.html"><strong>Yanatile DEMO</strong><span>Abrir enlace directo anterior</span></a>
+      <a href="./quellouno-demo.html"><strong>Quellouno DEMO</strong><span>Abrir enlace directo anterior</span></a>
+    </div>
+  </section>
+
+  <section class="card bottomChooser">
+    <h2>Cambiar provincia o distrito</h2>
+    <div class="chooser">
+      <div class="field"><label>Provincia</label><select id="provinceBottom"></select></div>
+      <div class="field"><label>Provincia / distrito</label><select id="placeBottom"></select></div>
+    </div>
+  </section>
+
+  <div class="foot">Plataforma exclusivamente demostrativa. No representa resultados electorales oficiales ni una encuesta científica. Las jurisdicciones se habilitan cuando existe una lista de candidatos suficientemente verificada.</div>
+</div>
+<div id="toast" class="toast"></div>
+<script>
+const API='https://hknktjopqdqkuqmplnus.supabase.co';
+const KEY='sb_publishable_CPV6D8xq9dZNsOTi0ylNiw_E7F5gmy0';
+const CREATOR_STORE='cd_lares_demo_creator_code';
+const $=id=>document.getElementById(id);
+let catalog=[],provinceIndex=0,current=null,data=null,creatorCode='';
+function toast(t){const x=$('toast');x.textContent=t;x.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>x.classList.remove('show'),2300)}
+async function rpc(name,body={}){const r=await fetch(`${API}/rest/v1/rpc/${name}`,{method:'POST',headers:{apikey:KEY,Authorization:`Bearer ${KEY}`,'Content-Type':'application/json'},body:JSON.stringify(body)});if(!r.ok)throw new Error(await r.text());return r.json()}
+function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
+function votedKey(){return current?.demo_slug?`cd_demo_voted_${current.demo_slug}`:''}
+function tokenKey(){return current?.demo_slug?`cd_demo_token_${current.demo_slug}`:''}
+function deviceToken(){const k=tokenKey();let t=localStorage.getItem(k);if(!t){t=crypto.randomUUID()+crypto.randomUUID();localStorage.setItem(k,t)}return t}
+function ready(){return !!current?.demo_slug&&$('adult').checked&&$('elector').checked&&!localStorage.getItem(votedKey())}
+function optionLabel(x,isProvince=false){if(isProvince)return x.demo_slug?`Provincia completa · ${x.candidate_count} candidatos`:'Provincia completa · En preparación';return x.demo_slug?`${x.name} · ${x.candidate_count} candidatos`:`${x.name} · En preparación`}
+function fillProvinceSelects(){['province','provinceBottom'].forEach(id=>{const s=$(id);s.innerHTML='';catalog.forEach((p,i)=>{const o=document.createElement('option');o.value=i;o.textContent=p.name;s.appendChild(o)});s.value=provinceIndex})}
+function fillPlaces(index,selectedDemo){provinceIndex=Number(index);const p=catalog[provinceIndex];['province','provinceBottom'].forEach(id=>$(id).value=provinceIndex);['place','placeBottom'].forEach(id=>{const s=$(id);s.innerHTML='';const po=document.createElement('option');po.value='province';po.textContent=optionLabel(p,true);s.appendChild(po);(p.districts||[]).forEach((d,i)=>{const o=document.createElement('option');o.value='d:'+i;o.textContent=optionLabel(d,false);s.appendChild(o)})});let v='province';if(selectedDemo){if(p.demo_slug===selectedDemo)v='province';else{const i=(p.districts||[]).findIndex(d=>d.demo_slug===selectedDemo);if(i>=0)v='d:'+i}}['place','placeBottom'].forEach(id=>$(id).value=v);choosePlace(v,false)}
+function choosePlace(value,push=true){const p=catalog[provinceIndex];current=value==='province'?{name:`Provincia de ${p.name}`,slug:p.slug,demo_slug:p.demo_slug,candidate_count:p.candidate_count,province:p.name,type:'province'}:(()=>{const d=p.districts[Number(value.split(':')[1])];return {...d,province:p.name,type:'district'}})();['place','placeBottom'].forEach(id=>$(id).value=value);$('adult').checked=false;$('elector').checked=false;if(push){const u=new URL(location.href);if(current.demo_slug)u.searchParams.set('demo',current.demo_slug);else{u.searchParams.delete('demo');u.searchParams.set('province',p.slug);u.searchParams.set('place',current.slug)}history.replaceState({},'',u)}if(!current.demo_slug){showPreparation();return}loadDemo()}
+function showPreparation(){$('status').className='status wait';$('status').innerHTML=`<b>${current.name}</b><br>DEMO EN PREPARACIÓN · candidatos por verificar.`;$('voteCard').classList.add('hidden');$('resultsCard').classList.add('hidden');$('creator').classList.remove('show');data=null}
+async function loadDemo(){try{$('status').className='status';$('status').textContent='Cargando demostración…';data=await rpc('get_demo_results',{p_survey_slug:current.demo_slug});if(!data?.ok)throw new Error('demo');$('status').className='status ready';$('status').innerHTML=`<b>${current.name}</b> · ${current.province}<br>DEMO ACTIVA · ${data.candidates.length} candidatos.`;$('voteTitle').textContent=`Participa · ${current.name}`;$('resultsTitle').textContent=`Intención de voto · ${current.name}`;$('voteCard').classList.remove('hidden');$('resultsCard').classList.remove('hidden');render();await verifyCreator()}catch(e){showPreparation();toast('No se pudo cargar esta demostración.')}}
+function render(){if(!data)return;const voted=!!localStorage.getItem(votedKey());$('votedMsg').textContent=voted?'✓ Este navegador ya registró una participación en esta demo.':'Marca las dos casillas para habilitar el voto.';const list=$('candidateList');list.innerHTML='';shuffle(data.candidates||[]).forEach(c=>{const el=document.createElement('div');el.className='candidate';el.innerHTML=`<div class="symbol">${c.logo_url?`<img src="${c.logo_url}" alt="Símbolo político">`:`<div class="fallback">${(c.political_org||'?').slice(0,2)}</div>`}</div><div><div class="name"></div><div class="party"></div></div><button class="vote">VOTAR</button>`;el.querySelector('.name').textContent=c.full_name;el.querySelector('.party').textContent=c.political_org||'Organización política';const img=el.querySelector('img');if(img)img.onerror=()=>{img.parentElement.innerHTML=`<div class="fallback">${(c.political_org||'?').slice(0,2)}</div>`};const b=el.querySelector('.vote');b.disabled=!ready();b.onclick=()=>cast('candidate',c.id,c.full_name);list.appendChild(el)});const sp=$('specials');sp.innerHTML='';(data.specials||[]).forEach(o=>{const b=document.createElement('button');b.className='special';b.textContent=o.label;b.disabled=!ready();b.onclick=()=>cast('special',o.id,o.label);sp.appendChild(b)});const totals=(data.candidates||[]).map(c=>Number(c.public_votes)+Number(c.injected_votes));const max=Math.max(1,...totals);const r=$('results');r.innerHTML='';[...(data.candidates||[])].sort((a,b)=>(+b.public_votes + +b.injected_votes)-(+a.public_votes + +a.injected_votes)).forEach((c,i)=>{const total=+c.public_votes + +c.injected_votes,pct=100*total/max,el=document.createElement('div');el.className='result';el.innerHTML=`<div class="rhead"><div><div class="rname">${i+1}°. ${c.full_name}</div><div class="party">${c.political_org||''}</div></div><div class="numbers"><b>${total}</b><br>Intención de voto</div></div><div class="bar"><span style="width:${pct}%"></span></div>`;r.appendChild(el)});const sr=$('specialResults');sr.innerHTML='';(data.specials||[]).forEach(o=>{const el=document.createElement('div');el.className='specialResult';el.innerHTML=`<span>${o.label}</span><b>${+o.public_votes + +o.injected_votes}</b>`;sr.appendChild(el)});if(creatorCode)renderCreator()}
+async function cast(type,id,label){if(!ready()){toast('Marca las dos casillas o este navegador ya participó.');return}if(!confirm(`¿Registrar voto de demostración por ${label}?`))return;try{const r=await rpc('cast_vote',{p_survey_slug:current.demo_slug,p_choice_type:type,p_choice_id:id,p_device_token:deviceToken(),p_age_group:null,p_community_text:null});if(r.ok){localStorage.setItem(votedKey(),'1');toast('Voto de demostración registrado.')}else if(r.duplicate){localStorage.setItem(votedKey(),'1');toast('Este navegador ya participó.')}await loadDemo()}catch{toast('No se pudo registrar el voto.')}}
+async function verifyCreator(){creatorCode='';$('creator').classList.remove('show');const saved=localStorage.getItem(CREATOR_STORE);if(!saved||!current?.demo_slug)return;try{const r=await rpc('demo_verify_creator',{p_survey_slug:current.demo_slug,p_creator_code:saved});if(r?.ok){creatorCode=saved;$('creator').classList.add('show');renderCreator()}}catch{}}
+function renderCreator(){if(!creatorCode||!data)return;const box=$('creatorGrid');box.innerHTML='';(data.candidates||[]).forEach(c=>{const el=document.createElement('div');el.className='creatorCandidate';el.innerHTML=`<div class="creatorName"></div><div class="party"></div><div class="actions"><button data-n="1">+1</button><button data-n="5">+5</button><button data-n="10">+10</button><button data-n="50">+50</button></div>`;el.querySelector('.creatorName').textContent=c.full_name;el.querySelector('.party').textContent=c.political_org||'';el.querySelectorAll('button').forEach(b=>b.onclick=()=>addDemo(c.id,+b.dataset.n,c.full_name));box.appendChild(el)})}
+async function addDemo(id,n,name){try{const r=await rpc('demo_add_injected_votes',{p_survey_slug:current.demo_slug,p_candidate_id:id,p_count:n,p_creator_code:creatorCode});if(!r.ok)throw new Error(r.error);toast(`+${n} para ${name}`);await loadDemo()}catch{toast('No se pudieron sumar votos de prueba.')}}
+$('reset').onclick=async()=>{if(!creatorCode||!current?.demo_slug)return;if(!confirm('¿Reiniciar los votos agregados de esta demostración?'))return;try{const r=await rpc('demo_reset_injected_votes',{p_survey_slug:current.demo_slug,p_creator_code:creatorCode});if(r.ok){toast('Votos de prueba reiniciados.');await loadDemo()}}catch{toast('No se pudo reiniciar.')}};
+$('adult').onchange=render;$('elector').onchange=render;$('refresh').onclick=()=>loadDemo();
+$('province').onchange=e=>fillPlaces(e.target.value);$('provinceBottom').onchange=e=>fillPlaces(e.target.value);$('place').onchange=e=>choosePlace(e.target.value);$('placeBottom').onchange=e=>{choosePlace(e.target.value);scrollTo({top:0,behavior:'smooth'})};
+(async()=>{try{const cat=await rpc('get_demo_catalog',{});catalog=cat.provinces||[];if(!catalog.length)throw new Error('catalog');const params=new URLSearchParams(location.search),wanted=params.get('demo');let pi=0;if(wanted){const found=catalog.findIndex(p=>p.demo_slug===wanted||(p.districts||[]).some(d=>d.demo_slug===wanted));if(found>=0)pi=found}else{const ps=params.get('province');const f=catalog.findIndex(p=>p.slug===ps);if(f>=0)pi=f}provinceIndex=pi;fillProvinceSelects();fillPlaces(pi,wanted||'lares-demo-manipulacion-2026')}catch(e){$('status').className='status wait';$('status').textContent='No se pudo cargar el catálogo. Actualiza la página.'}})();
+</script>
+</body>
+</html>
