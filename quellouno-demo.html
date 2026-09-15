@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#711f2d">
+<title>Demo · Intención de votos | Quellouno 2026</title>
+<style>
+html,body{margin:0;background:#f5f2ed;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#1d1b19}body{min-height:100vh}.boot{max-width:760px;margin:auto;padding:18px}.card{margin-top:18vh;background:#fff;border:1px solid #e8e0d8;border-radius:18px;padding:22px;text-align:center}.logo{width:48px;height:48px;border-radius:13px;background:#711f2d;color:#fff;display:grid;place-items:center;margin:0 auto 12px;font-weight:900}.card h1{font-size:22px;margin:0 0 7px}.card p{font-size:13px;color:#746d67;margin:0}.error{display:none;margin-top:12px;color:#8a2535;font-size:12px}
+</style>
+</head>
+<body>
+<div class="boot"><div class="card"><div class="logo">CD</div><h1>Demo · Intención de votos</h1><p>Cargando Quellouno 2026…</p><div id="error" class="error">No se pudo cargar la demostración. Actualiza la página.</div></div></div>
+<script>
+(async()=>{
+  try{
+    const response=await fetch('./lares-demo.html?template=quellouno-demo-v1',{cache:'no-store'});
+    if(!response.ok) throw new Error('template');
+    let html=await response.text();
+    html=html
+      .replaceAll('Lares 2026','Quellouno 2026')
+      .replaceAll('de Lares','de Quellouno')
+      .replaceAll('lares-demo-manipulacion-2026','quellouno-demo-manipulacion-2026')
+      .replaceAll("const VOTED='cd_demo_lares_public_voted';","const VOTED='cd_demo_quellouno_public_voted';")
+      .replaceAll("const TOKEN='cd_demo_lares_public_token';","const TOKEN='cd_demo_quellouno_public_token';");
+    document.open();
+    document.write(html);
+    document.close();
+  }catch(error){
+    document.getElementById('error').style.display='block';
+  }
+})();
+</script>
+</body>
+</html>
